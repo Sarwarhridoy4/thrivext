@@ -1,12 +1,9 @@
 [
   {
-    "href": "/typescript/Module-1",
-    "label": "Go to Module 1",
+    "href": "/gettingstarted",
+    "label": "next level web developement",
+    "des":"Next Level Web Developement",
     "color": "text-gray-300"
-  },
-  {
-    "href": "/introduction",
-    "label": "Go to Introduction",
-    "color": "text-blue-200"
+
   }
 ]

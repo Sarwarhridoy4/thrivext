@@ -5,7 +5,7 @@ import { getPageMap } from "nextra/page-map";
 import "./globals.css";
 
 export const metadata = {
-  title: "Bangla Tech Notes",
+  title: "thivext",
   description: "Notes in Bangla covering various modern web technologies.",
 };
 
