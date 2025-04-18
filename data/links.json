@@ -1,0 +1,12 @@
+[
+  {
+    "href": "/typescript/Module-1",
+    "label": "Go to Module 1",
+    "color": "text-gray-300"
+  },
+  {
+    "href": "/introduction",
+    "label": "Go to Introduction",
+    "color": "text-blue-200"
+  }
+]
