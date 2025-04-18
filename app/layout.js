@@ -13,18 +13,18 @@ const navbar = (
   <Navbar
     logo={
       <>
-        <b>Nextra</b>
-        <span>Documentation</span>
+        <b className=" text-2xl">Thrivext</b>
+        {/* <span>Documentation</span> */}
       </>
     }
-    projectLink="https://github.com/Rafsan12/nextra-blog"
+    projectLink="https://github.com/Takib-Ahmed/thrivext"
   />
 );
 
 const footer = (
-  <div className=" py-4  text-gray-500">
+  <div className="   text-gray-500">
     <Footer>
-      <h1 className="text-center">MIT {new Date().getFullYear()} © Nextra.</h1>
+      <h1 className="text-center ">copyright {new Date().getFullYear()} © thrivext.</h1>
     </Footer>
   </div>
 );
@@ -33,13 +33,15 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+
+      <link rel="icon" href="/thrivext/cropped-bEvKgIiUSIy-93xr4nDckg.webp" type="image/webp" />
+
       </Head>
       <body suppressHydrationWarning>
         <Layout
           navbar={navbar}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
+          docsRepositoryBase="https://github.com/Takib-Ahmed/thrivext/tree/main"
           footer={footer}
         >
           {children}
