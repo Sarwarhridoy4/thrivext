@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Contribution Guidelines
 
-When contributing to this repository, please first discuss the change you wish to make via [issue](/), [email](thrivexts@gmail.com), or any other method with the owners of this repository before making a change.
+When contributing to this repository, please first discuss the change you wish to make via [issue](https://github.com/Takib-Ahmed/thrivext/issues), [email](thrivexts@gmail.com), or any other method with the owners of this repository before making a change.
 
 ## How to work on docs
 
