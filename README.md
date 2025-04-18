@@ -1,6 +1,6 @@
 # thrivext
 
-**This is documantation project to make document our learing from next level web developement course from [Programming Hero](https://web.programming-hero.com/home/level-2) Created with [Nextra](https://nextra.site/)**
+**This is documantation project to make document our learing from next level web developement course from [Programming Hero](https://web.programming-hero.com/home/level2) Created with [Nextra](https://nextra.site/)**
 
 ## Getting Started
 
