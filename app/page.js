@@ -1,10 +1,20 @@
 import Link from "next/link";
-import courses from "@/data/links.json";
 import Image from "next/image";
-// import logo from "@/public/logo.svg"
 import next from "@/public/assets/nextlogo.svg"
 import Logo from "@/assets/logo"
 export default function Home() {
+
+
+const courses = [
+  {
+    "href": "/gettingstarted",
+    "label": "next level web developement",
+    "des":"Next Level Web Developement",
+    "color": "text-gray-300"
+
+  }
+]
+  
   return (
     <div className=" h-full w-full z-50  fixed top-0 bottom-0 flex items-center justify-center bg-gray-900  text-white">
      
