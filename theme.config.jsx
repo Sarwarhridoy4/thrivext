@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default {
   logo: (
-    <Link href="/docs">
+    <Link href="/">
       <span className="font-bold text-xl">Thrivext</span>
     </Link>
   ),

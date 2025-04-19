@@ -4,21 +4,24 @@ import { Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import "./globals.css";
 
+
 export const metadata = {
-  title: "thivext",
+  title: "thrivext",
   description: "Notes in Bangla covering various modern web technologies.",
 };
-
- const navbar = (
+const navbar = (
   <Navbar
+  
     logo={
       <>
-        <b className=" text-2xl">Thrivext</b>
-        {/* <span>Documentation</span> */}
+        <b className="text-2xl">Thrivext</b>
       </>
     }
     projectLink="https://github.com/Takib-Ahmed/thrivext"
-  />
+  >
+    {/* 🟡 Add your custom link here */}
+  
+  </Navbar>
 );
 
 const footer = (
