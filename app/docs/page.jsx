@@ -7,6 +7,7 @@ export default function Home() {
 
 const courses = [
   {
+    "id":1,
     "href": "/gettingstarted",
     "label": "next level web developement",
     "des":"Next Level Web Developement",
@@ -16,7 +17,7 @@ const courses = [
 ]
   
   return (
-    <div className=" h-full w-full z-50  fixed top-0 bottom-0 flex items-center justify-center bg-gray-900  text-white">
+    <div className="  min-h-screen w-full z-50  top-0 bottom-0 flex items-center justify-center   bg-[var(--color-background)] text-[var(--foreground)] ">
      
       <div className="space-y-4 text-center items-center flex flex-col">
  <div  className=" flex flex-col items-center">
@@ -30,7 +31,7 @@ const courses = [
   </h1>
  </div>
         {courses.map((course) => (
-         <Link href={course.href}    key={course.slug} className=" rounded-xl flex items-center justify-center  bg-[#0D0E1F]">
+         <Link href={course.href}    key={course.id} className=" rounded-xl flex items-center justify-center  bg-[#0D0E1F]">
           <Image alt="next" width={100000} height={10000} className=" w-20 p-3"  src={next}>
 
           </Image>
