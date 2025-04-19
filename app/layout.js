@@ -9,7 +9,7 @@ export const metadata = {
   description: "Notes in Bangla covering various modern web technologies.",
 };
 
-const navbar = (
+ const navbar = (
   <Navbar
     logo={
       <>
