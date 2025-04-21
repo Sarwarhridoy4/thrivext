@@ -14,7 +14,7 @@ export const metadata = {
     const courses = [
       {
         id: 1,
-        href: "/gettingstarted",
+        href: "/0_gettingstarted",
         label: "Next Level Web Development",
         des: "Next Level Web Development",
         color: "text-gray-300",
