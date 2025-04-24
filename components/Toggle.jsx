@@ -16,7 +16,7 @@ export default function Toggle({ title, children }) {
         <span title='Click to toggle' className=' cursor-pointer w-full'>{title}</span>
       </button>
       {open && (
-        <div className="mt-2 ml-6   pl-4 text-sm    ">
+        <div className="mt-2 ml-6   pl-4 text-sm     ">
           {children}
         </div>
       )}
