@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Contribution Guidelines
 
-When contributing to this repository, please first discuss the change you wish to make via [issue](https://github.com/Takib-Ahmed/thrivext/issues), [email](thrivexts@gmail.com), or any other method with the owners of this repository before making a change.
+When contributing to this repository, please first discuss the change you wish to make via [issue](https://github.com/Takib-Ahmed/thrivext/issues), [email](mailto:thrivexts@gmail.com), or any other method with the owners of this repository before making a change.
 
 # 🤝 Contribution Guidelines
 
@@ -63,7 +63,11 @@ To create a new page in your Nextra-powered documentation:
 ```
 project-root/
 ├─ app/
+<<<<<<< HEAD
 │  ├─ Topics-name/
+=======
+│  ├─ title/
+>>>>>>> 7a7168176fd32037e3e796b4c2ca1aead22091d2
 │  │  └─ page.md
 ```
 
@@ -90,9 +94,13 @@ project-root/
 4. Open `page.md` and add the following content:
 
    ```markdown
+<<<<<<< HEAD
    # page title
+=======
+   # Title Name
+>>>>>>> 7a7168176fd32037e3e796b4c2ca1aead22091d2
 
-   This is a markdown page under /my-folder route.
+   This is a markdown page under /title route.
    ```
 
 ## ✅ Submitting Your Contribution
