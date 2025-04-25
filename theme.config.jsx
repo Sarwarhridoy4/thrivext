@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 export default {
   logo: (
@@ -13,4 +13,4 @@ export default {
   footer: {
     text: "MIT 2025 © Thrivext",
   },
-}
+};
