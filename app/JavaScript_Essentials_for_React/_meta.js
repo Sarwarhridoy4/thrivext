@@ -1,6 +1,7 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
-    javascript_key_features_and_concepts: "JavaScript Key Features & Concepts",
-    js_execution_process: "JS Execution Process",
-    javascript_scope: "JavaScript Scope",
-  };
-  
+  Javascript_Key_Features_and_Concepts: "JavaScript Key Features and Concepts",
+  Javascript_Scope: "JavaScript Scope",
+  Js_Execution_Process: "JS Execution Process",
+};
+
