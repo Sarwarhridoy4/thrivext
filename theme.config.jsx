@@ -1,4 +1,16 @@
 import Link from "next/link";
+import "@pagefind/default-ui/style.css";
+import { useEffect } from "react";
+
+const PagefindSearch = () => {
+  useEffect(() => {
+    import("@pagefind/default-ui").then(({ PagefindUI }) => {
+      PagefindUI({ element: "#search" });
+    });
+  }, []);
+
+  return <div id="search" className="my-4" />;
+};
 
 export default {
   logo: (
@@ -12,5 +24,8 @@ export default {
   docsRepositoryBase: "https://github.com/Takib-Ahmed/thrivext/blob/main",
   footer: {
     text: "MIT 2025 © Thrivext",
+  },
+  search: {
+    component: PagefindSearch,
   },
 };
