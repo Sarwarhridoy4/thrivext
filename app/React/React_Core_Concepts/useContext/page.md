@@ -1,4 +1,4 @@
-# 7. useContext হুক\*
+# 7. useContext
 
 ### 🔍 **useContext কী?**
 
