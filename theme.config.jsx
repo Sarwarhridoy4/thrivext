@@ -5,7 +5,15 @@ import { useEffect } from "react";
 const PagefindSearch = () => {
   useEffect(() => {
     import("@pagefind/default-ui").then(({ PagefindUI }) => {
-      PagefindUI({ element: "#search" });
+      PagefindUI({
+        element: "#search",
+        showImages: false,
+        translations: {
+          placeholder: "সার্চ করুন...",
+          zeroResults: "কোনো কিছু পাওয়া যায়নি",
+        },
+      });
+      
     });
   }, []);
 
