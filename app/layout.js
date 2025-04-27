@@ -13,17 +13,11 @@ export const metadata = {
 const CustomNavbar = () => {
   return (
     <Navbar
+
       logo={
-        <div className="flex items-center gap-8">
+        <div className="flex items-center  w-full justify-between relative">
           <span className="text-3xl font-bold">Thrivext</span>
-          <div className="hidden md:flex gap-6">
-            <Link
-              href="/about"
-              className="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400"
-            >
-              About
-            </Link>
-          </div>
+  
         </div>
       }
       projectLink="https://github.com/Takib-Ahmed/thrivext"
