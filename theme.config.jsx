@@ -1,5 +1,5 @@
-import Link from "next/link";
 import "@pagefind/default-ui/style.css";
+import Link from "next/link";
 import { useEffect } from "react";
 
 const PagefindSearch = () => {

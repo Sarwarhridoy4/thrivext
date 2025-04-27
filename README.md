@@ -63,11 +63,7 @@ To create a new page in your Nextra-powered documentation:
 ```
 project-root/
 ├─ app/
-<<<<<<< HEAD
-│  ├─ Topics-name/
-=======
 │  ├─ title/
->>>>>>> 7a7168176fd32037e3e796b4c2ca1aead22091d2
 │  │  └─ page.md
 ```
 
@@ -94,11 +90,7 @@ project-root/
 4. Open `page.md` and add the following content:
 
    ```markdown
-<<<<<<< HEAD
-   # page title
-=======
    # Title Name
->>>>>>> 7a7168176fd32037e3e796b4c2ca1aead22091d2
 
    This is a markdown page under /title route.
    ```
