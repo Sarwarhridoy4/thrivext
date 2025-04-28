@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import "nextra-theme-docs/style.css";
 import { Head } from "nextra/components";
@@ -8,25 +9,26 @@ export const metadata = {
   title: "thrivext",
   description: "Notes in Bangla covering various modern web technologies.",
 };
-const navbar = (
-  <Navbar
-    logo={
-      <>
-        <b className="text-2xl">Thrivext</b>
-      </>
-    }
-    projectLink="https://github.com/Takib-Ahmed/thrivext"
-  >
-    {/* <Link href="/about">About</Link> */}
 
-    {/* 🟡 Add your custom link here */}
-  </Navbar>
-);
+const CustomNavbar = () => {
+  return (
+    <Navbar
+
+      logo={
+        <div className="flex items-center  w-full justify-between relative">
+          <span className="text-3xl font-bold">Thrivext</span>
+  
+        </div>
+      }
+      projectLink="https://github.com/Takib-Ahmed/thrivext"
+    />
+  );
+};
 
 const footer = (
-  <div className="   text-gray-500">
+  <div className="nx-text-gray-500">
     <Footer>
-      <h1 className="text-center ">
+      <h1 className="nx-text-center">
         copyright {new Date().getFullYear()} © thrivext.
       </h1>
     </Footer>
@@ -45,7 +47,7 @@ export default async function RootLayout({ children }) {
       </Head>
       <body suppressHydrationWarning>
         <Layout
-          navbar={navbar}
+          navbar={<CustomNavbar />}
           pageMap={await getPageMap()}
           docsRepositoryBase="https://github.com/Takib-Ahmed/thrivext/tree/main"
           footer={footer}
