@@ -16,7 +16,7 @@ export default function Hero() {
       ];
   return (
     <section className="py-10 sm:py-28  min-[369px]:px-2 sm:px-4 mx-auto flex-col flex justify-center w-full">
-    <div className="  text-center mb-10">
+    <div className="  text-center ">
       <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl  w-full font-bold mb-5 sm:mb-10 sm:w-xl md:w-2xl lg:w-3xl mx-auto">
         Thrive Beyond Limits, Next Begins Here
       </h2>

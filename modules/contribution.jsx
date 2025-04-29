@@ -30,9 +30,9 @@ export default function Contribution(){
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">
-              🤝 Contribution Guidelines
+              Contribution Guidelines 
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg ">
               We welcome all contributions! Here's how you can help make this
               project better.
             </p>
@@ -45,10 +45,10 @@ export default function Contribution(){
                 className="  overflow-hidden p-3 sm:p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-all duration-300"
               >
                 <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className=" mb-4">
                   {step.description}
                 </p>
-                <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg  overflow-x-scroll sm:overflow-auto w-full">
+                <pre className=" bg-gray-800    text-white p-4 rounded-lg  overflow-x-scroll sm:overflow-auto w-full">
                   <code className="  ">{step.code}</code>
                 </pre>
               </div>
@@ -57,7 +57,7 @@ export default function Contribution(){
 
           <div className="mt-16 text-center">
             <h3 className="text-2xl font-bold mb-4">Ready to Contribute?</h3>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-lg  mb-6">
               Before making changes, please discuss via{" "}
               <a
                 href="https://github.com/Takib-Ahmed/thrivext/issues"
