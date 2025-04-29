@@ -37,7 +37,7 @@ export default function Hero() {
                 src={next}
               />
               <span
-                className={`${course.color}  sm:text-nowrap hover:underline font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent bg-clip-text hover:underline inline-block`}
+                className={`${course.color}  sm:text-nowrap  font-bold bg-gradient-to-r  hover:border-b hover:border-purple-500  h-5   md:hover:translate-y-[0.05rem] from-pink-500 via-purple-500 to-blue-500 text-transparent bg-clip-text hover:underline inline-block`}
               >
                 {course.des}
               </span>
@@ -60,7 +60,7 @@ export default function Hero() {
                 src={next}
               />
               <span
-                className={`${course.color} text-nowrap font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent bg-clip-text hover:underline inline-block`}
+                className={`${course.color} text-nowrap font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent bg-clip-text hover:border-b hover:border-purple-500   md:hover:translate-y-[0.05rem]  inline-block`}
               >
                 {course.des}
               </span>
