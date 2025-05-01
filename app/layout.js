@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import "nextra-theme-docs/style.css";
 import { Head } from "nextra/components";
@@ -13,11 +12,9 @@ export const metadata = {
 const CustomNavbar = () => {
   return (
     <Navbar
-
       logo={
         <div className="flex items-center  w-full justify-between relative">
           <span className="text-3xl font-bold">Thrivext</span>
-  
         </div>
       }
       projectLink="https://github.com/Takib-Ahmed/thrivext"
@@ -49,6 +46,9 @@ export default async function RootLayout({ children }) {
         <Layout
           navbar={<CustomNavbar />}
           pageMap={await getPageMap()}
+          sidebar={{
+            defaultMenuCollapseLevel: 1,
+          }}
           docsRepositoryBase="https://github.com/Takib-Ahmed/thrivext/tree/main"
           footer={footer}
         >
