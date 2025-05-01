@@ -34,7 +34,7 @@ export default function Contribution(){
               Contribution Guidelines 
             </h2>
             <p className="text-lg ">
-              We welcome all contributions! Here's how you can help make this
+              We welcome all contributions! {`Here's`} how you can help make this
               project better.
             </p>
           </div>
