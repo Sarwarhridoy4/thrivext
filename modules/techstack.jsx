@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import graphql from "@/public/assets/grapql.svg";
 import jest from "@/public/assets/jest.svg";
