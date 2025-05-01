@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import Logo from "@/assets/logo";
 import next from "@/public/assets/nextlogo.svg";
