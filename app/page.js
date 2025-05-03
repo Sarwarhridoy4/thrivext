@@ -1,4 +1,5 @@
 // Page-level metadata to hide from sidebar
+/* eslint-disable react/no-unescaped-entities */
 export const metadata = {
   title: "Thrivext", // Title displayed in browser tab
   display: "hidden", // Hides this page from sidebar
