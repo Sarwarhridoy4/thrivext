@@ -12,7 +12,7 @@
 | **Union**        | একাধিক টাইপের ভ্যালু গ্রহণ করার সুবিধা দিতে             |
 | **Intersection** | একাধিক টাইপ একত্রে ব্যবহার করে কম্বাইন্ড টাইপ তৈরি করতে |
 
-## ![_- visual selection (1).png](../../../public/TypeScript/TypeScript_type.png)
+## ![_- visual selection (1).png](../../../../public/TypeScript/TypeScript_type.png)
 
 ---
 
