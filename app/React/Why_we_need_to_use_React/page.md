@@ -56,7 +56,6 @@ React এ আমরা শুধুমাত্র একটি `Counter` কম
 
 ```jsx
 jsx;
-CopyEdit;
 function Counter() {
   const [count, setCount] = useState(0);
 
