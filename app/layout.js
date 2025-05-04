@@ -49,7 +49,7 @@ export default async function RootLayout({ children }) {
           sidebar={{
             defaultMenuCollapseLevel: 1,
           }}
-          docsRepositoryBase="https://github.com/Takib-Ahmed/thrivext/tree/main"
+          docsRepositoryBase="https://github.com/Takib-Ahmed/thrivext/tree/development"
           footer={footer}
         >
           {children}
