@@ -7,7 +7,7 @@ export default function Toggle({ title, children }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <React.Fragment>
+    <>
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 text-left font-medium transition-colors  w-full"
@@ -22,6 +22,6 @@ export default function Toggle({ title, children }) {
         </span>
       </button>
       {open && <div className="mt-2 ml-6 pl-4 text-sm">{children}</div>}
-    </React.Fragment>
+    </>
   );
 }
