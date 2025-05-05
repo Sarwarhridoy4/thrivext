@@ -65,7 +65,7 @@ export default function App() {
 }
 ```
 
-![State Update Demo](../../../../public/React/state-ezgif.com-optimize.gif)
+![State Update Demo](../../../../public/images/React/state-ezgif.com-optimize.gif)
 
 ### 🔍 ব্যাখ্যা :
 
