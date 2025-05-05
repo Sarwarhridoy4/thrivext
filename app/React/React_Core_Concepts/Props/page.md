@@ -6,7 +6,7 @@
 
 ### 🔧 Props-এর বৈশিষ্ট্য
 
-![Props](../../../../public/React/Props.png)
+![Props](../../../../public/images/React/Props.png)
 
 ### সাধারণ পদ্ধতি vs Destructuring পদ্ধতি
 
