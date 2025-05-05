@@ -5,11 +5,7 @@ export default [
     href: "/", // index route
     type: "page",
   },
-  {
-    title: "About",
-    href: "/about",
-    type: "page",
-  },
+
   {
     title: "Docs",
     type: "menu",
