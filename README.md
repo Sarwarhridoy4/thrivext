@@ -1,10 +1,10 @@
 # thrivext
 
-**This is documantation project to make document our learing from next level web developement course from [Programming Hero](https://web.programming-hero.com/home/level2) Created with [Nextra](https://nextra.site/)**
+**This is documantation project to make document our learing from next level web developement course from [Programming Hero](https://web.programming-hero.com/home/level2) build with [Nextra](https://nextra.site/)**
 
 ## Getting Started
 
-To run this project to you local development mode, First -> run the development server:
+To run this project in your local development mode, First -> run the development server:
 
 ```bash
 npm run dev
@@ -15,6 +15,7 @@ pnpm dev
 # or
 bun dev
 ```
+> ⚠️ This project uses `npm`. The other commands are provided for convenience in case you prefer a different package manager.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

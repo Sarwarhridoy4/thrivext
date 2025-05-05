@@ -2,7 +2,7 @@
 
 React 19 (2024) নিয়ে এসেছে কিছু গুরুত্বপূর্ণ ফিচার, যা Developer Experience এবং Performance আরও উন্নত করেছে।
 
-![React 19](../../../public/React/React%2019.png)
+![React 19](../../../public/images/React/React%2019.png)
 
 ### **১. Actions**
 
