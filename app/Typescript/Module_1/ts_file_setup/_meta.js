@@ -2,7 +2,5 @@
 export default {
     Why_setup: "Why do we need tsconfig setup?",
     ts_confiq_setup: "⚙️ tsconfig.json কনফিগারেশন",
- 
-
   };
   
