@@ -15,20 +15,20 @@ export default function HeroSection() {
     },
   ];
   return (
-    <section className="py-10 sm:py-28  min-[369px]:px-2 sm:px-4 mx-auto flex-col flex justify-center w-full">
-      <div className="text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl  w-full font-bold mb-5 sm:mb-10 sm:w-xl md:w-2xl lg:w-3xl mx-auto">
+    <div className="py-10 sm:py-28  min-[369px]:px-2 sm:px-4 mx-auto flex-col flex justify-center w-full">
+      <span className="text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl  min-w-[700px]:w-10 font-bold mb-5 sm:mb-10  sm:w-xl md:w-2xl lg:w-3xl mx-auto">
           Thrive Beyond Limits, Next Begins Here
         </h2>
-        <div>
-          <div className="text-sm sm:text-base gap-x-1 items-center md:text-lg lg:text-xl  font-semibold sm:font-bold ">
+        <span>
+          <p className="text-sm sm:text-base gap-x-1 items-center md:text-lg lg:text-xl  font-semibold sm:font-bold ">
             This is a documentation project to capture our learning journey from
             the{" "}
             {courses.map((course) => (
               <Link
                 href={course.href}
                 key={course.id}
-                className="rounded-xl gap-1 sm:gap-1.5  inline-flex translate-y-1.5  sm:hidden   items-center hover:shadow-lg transition-all duration-300 flex-wrap"
+                className="rounded-xl  gap-1 sm:gap-1.5  max-[476.5px]:inline-flex translate-y-1.5  min-[477px]:hidden   items-center hover:shadow-lg transition-all duration-300 flex-wrap"
               >
                 <Image
                   alt="next"
@@ -45,14 +45,14 @@ export default function HeroSection() {
                 </span>
               </Link>
             ))}
-          </div>
-          <div className="inline-flex   justify-center flex-wrap items-center gap-x-1 sm:gap-x-2 gap-y-1  font-semibold sm:font-bold text-sm sm:text-base md:text-lg lg:text-xl  mt-0.5 sm:mt-2">
+          </p>
+          <span className="inline-flex   justify-center flex-wrap items-center gap-x-1 sm:gap-x-2 gap-y-1  font-semibold sm:font-bold text-sm sm:text-base md:text-lg lg:text-xl  mt-0.5 sm:mt-2">
             {/* Course Link */}
             {courses.map((course) => (
               <Link
                 href={course.href}
                 key={course.id}
-                className="rounded-xl gap-1.5 hidden sm:flex items-center hover:shadow-lg transition-all duration-300"
+                className="rounded-xl gap-1.5 max-[476.5px]:hidden  flex items-center hover:shadow-lg transition-all duration-300"
               >
                 <Image
                   alt="next"
@@ -70,7 +70,7 @@ export default function HeroSection() {
             ))}
             {/* "course by" and PH logo */}
             <span className="inline-flex items-center text-nowrap">
-              <p className="w-9 sm:w-12  md:w-15  lg:w-17">course by</p>
+              <span className="w-9 sm:w-12  md:w-15  lg:w-17">course by</span>
               <a
                 href="https://web.programming-hero.com"
                 className="text-blue-500 hover:underline flex items-center ml-1 "
@@ -96,8 +96,8 @@ export default function HeroSection() {
                 Nextra.
               </a>
             </span>
-          </div>
-        </div>
+          </span>
+        </span>
         <div className="flex gap-4  mt-4 md:mt-5   lg:mt-6 w-full justify-center items-center  font-semibold sm:font-bold">
           <Link
             href="/0_gettingstarted"
@@ -122,7 +122,7 @@ export default function HeroSection() {
             Explore Course
           </Link>
         </div>
-      </div>
-    </section>
+      </span>
+    </div>
   );
 }
