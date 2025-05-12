@@ -1,0 +1,73 @@
+## Interface কী?
+
+TypeScript-এ  `interface` হলো  এমন এক কাঠামো, যেটা দিয়ে আমরা object-এর গঠন (structure) নির্ধারণ করি।
+
+যেমন, কোন কোন property থাকবে, সেগুলোর টাইপ কী হবে — এসব কিছু আমরা interface দিয়ে declare করতে পারি।
+
+### উদাহরণ:
+
+```tsx
+interface User {
+  name: string;
+  age: number;
+}
+
+const user1: User = {
+  name: "Hafijur",
+  age: 18,
+};
+```
+
+## Interface দিয়ে শুধু object structure define করা যায়?
+
+না! `interface` দিয়ে শুধু `object`  না, `function` **,** `array` **,** `class`এর মতো আরও structure-ও define করা যায়।
+
+### Function-এর টাইপ define করার জন্য Interface:
+
+```tsx
+interface Add {
+  (a: number, b: number): number;
+}
+
+const add: Add = (x, y) => x + y;
+```
+
+### Array টাইপ:
+
+```tsx
+interface NameList {
+  [index: number]: string;
+}
+
+const friends: NameList = ["Arafat", "Tarek", "Hasan"];
+
+```
+
+## 
+
+## Type 🆚 Interface
+
+TypeScript-এ `type` এবং `interface` অনেক কিছুতেই একে অপরের বিকল্প, তবে কিছু পার্থক্য আছে।
+
+### ✅ Table: পার্থক্যগুলো এক নজরে
+
+| বৈশিষ্ট্য | `interface` ✅ | `type` ✅ |
+| --- | --- | --- |
+| Object structure define | ✅ | ✅ |
+| Function টাইপ define করা | ✅ | ✅ |
+| Array, Tuple টাইপ | ✅ (কিছুটা সীমিত) | ✅ |
+| Union & Intersection | ❌ | ✅ |
+| Extend করা (inherit) | ✅ (`extends` দিয়ে) | ✅ (`&` দিয়ে) |
+| Duplicate declare করে merge | ✅ | ❌ |
+| Primitive define করা | ❌ | ✅ (e.g. `type Age = number`) |
+| Class implement করা | ✅ | ✅ |
+
+## তাহলে কখন কোনটা ব্যবহার করব?
+
+| যদি আমরা চাই… | তাহলে ব্যবহার করব |
+| --- | --- |
+| Object structure define করতে | `interface` বা `type` যেকোনোটা |
+| Multiple টাইপ combine করতে | `type` (`&` বা union দিয়ে) |
+| future এ extend বা modify করতে | `interface` |
+| class implement করতে | `interface` |
+| Primitive, union, intersection টাইপ define করতে | `type` |

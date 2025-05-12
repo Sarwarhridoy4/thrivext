@@ -1,0 +1,45 @@
+# Generic with Interface
+
+## Interface-এ Generics ব্যবহার
+
+Generics শুধু type-এর সাথেই নয়, **interface** এর সাথেও ব্যবহার করা যায়। এতে interface আরও flexible ও reusable হয়। আমরা চাইলে interface-এর ভেতরের কোনো property-এর টাইপ dynamicভাবে নির্ধারণ করতে পারি।
+
+### উদাহরণ:
+
+```tsx
+interface Person<T> {
+  name: string;
+  value: T;
+}
+
+const person1: Person<number> = { name: "John", value: 25 };
+const person2: Person<string> = { name: "Jane", value: "Engineer" };
+```
+
+🔹 এখানে `T` হলো একটা generic টাইপ।
+
+🔹 আমরা যখন `Person<number>` লিখি, তখন `value`property-এর টাইপ হবে `number`।
+
+🔹 আবার `Person<string>` দিলে, `value`হবে  `string`।
+
+### এখানে আমরা `value` property-তে শুধু `string` বা `number` না, চাইলে **object** বা **array** ও পাঠাতে পারি।
+
+### উদাহরণ:
+
+```tsx
+interface Person<T> {
+  name: string;
+  value: T;
+}
+
+const person3: Person<{ job: string; salary: number }> = {
+  name: "Karim",
+  value: { job: "Developer", salary: 50000 },
+};
+const person4: Person<string[]> = {
+  name: "Rahim",
+  value: ["Developer", "Designer"],
+};
+```
+
+##

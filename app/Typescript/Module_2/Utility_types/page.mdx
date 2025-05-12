@@ -1,0 +1,139 @@
+# **Utility types**
+
+## ✅ 1. **আমরা যদি একটা টাইপের সব property-কে optional বানাতে চাই**
+
+➡️ তখন `Partial<Type>` ব্যবহার করবো
+
+```tsx
+type User = { name: string; age: number };
+type OptionalUser = Partial<User>;
+
+const user: OptionalUser = { name: "Hamim" }; // ঠিক আছে, age না দিলেও চলবে
+```
+
+---
+
+## ✅ 2. **আমরা যদি একটা টাইপের সব optional property-কে required করতে চাই**
+
+➡️ তখন `Required<Type>` ব্যবহার করবো
+
+```tsx
+type User = { name?: string; age?: number };
+type FullUser = Required<User>;
+
+const user: FullUser = { name: "Hamim", age: 18 }; // সব দিতে হবে
+```
+
+---
+
+## ✅ 3. **আমরা যদি একটা টাইপের সব প্রপার্টিকে read-only করতে চাই**
+
+➡️ তখন `Readonly<Type>` ব্যবহার করবো
+
+```tsx
+type User = { name: string; age: number };
+type ReadonlyUser = Readonly<User>;
+
+const user: ReadonlyUser = { name: "Hamim", age: 20 };
+// user.age = 25; ❌ Error — পরিবর্তন করা যাবে না
+```
+
+---
+
+## ✅ 4. **আমরা যদি নির্দিষ্ট কিছু key এবং তাদের value টাইপ দিয়ে object টাইপ বানাতে চাই**
+
+➡️ তখন `Record<Keys, ValueType>` ব্যবহার করবো
+
+```tsx
+type Roles = "admin" | "user";
+type AccessMap = Record<Roles, boolean>;
+
+const access: AccessMap = {
+  admin: true,
+  user: false,
+};
+```
+
+---
+
+## ✅ 5. **আমরা যদি কোন টাইপ থেকে নির্দিষ্ট কয়েকটা key বেছে নিতে চাই**
+
+➡️ তখন `Pick<Type, Keys>` ব্যবহার করবো
+
+```tsx
+type User = { name: string; age: number; email: string };
+type BasicInfo = Pick<User, "name" | "email">;
+
+const user: BasicInfo = { name: "Hamim", email: "hamim@gmail.com" };
+```
+
+---
+
+## ✅ 6. **আমরা যদি কোন টাইপ থেকে কিছু key বাদ দিতে চাই**
+
+➡️ তখন `Omit<Type, Keys>` ব্যবহার করবো
+
+```tsx
+type User = { name: string; age: number; email: string };
+type NoEmail = Omit<User, "email">;
+
+const user: NoEmail = { name: "Hamim", age: 20 };
+```
+
+---
+
+## ✅ 7. **আমরা যদি Union টাইপ থেকে কিছু নির্দিষ্ট টাইপ বাদ দিতে চাই**
+
+➡️ তখন `Exclude<Type, Remove>` ব্যবহার করবো
+
+```tsx
+type Status = "loading" | "success" | "error";
+type NoError = Exclude<Status, "error">; // "loading" | "success"
+```
+
+---
+
+## ✅ 8. **আমরা যদি শুধু মিল থাকা টাইপ গুলো রাখতে চাই**
+
+➡️ তখন `Extract<Type, Match>` ব্যবহার করবো
+
+```tsx
+type A = "a" | "b" | "c";
+type B = "b" | "c" | "d";
+type Common = Extract<A, B>; // "b" | "c"
+```
+
+---
+
+## ✅ 9. **আমরা যদি null এবং undefined বাদ দিতে চাই টাইপ থেকে**
+
+➡️ তখন `NonNullable<Type>` ব্যবহার করবো
+
+```tsx
+type Value = string | null | undefined;
+type CleanValue = NonNullable<Value>; // string
+```
+
+---
+
+## ✅ 10. **আমরা যদি কোনো ফাংশনের parameter গুলোর টাইপ জানতে চাই**
+
+➡️ তখন `Parameters<Function>` ব্যবহার করবো
+
+```tsx
+function greet(name: string, age: number) {}
+type Params = Parameters<typeof greet>; // [string, number]
+```
+
+---
+
+## ✅ 11. **আমরা যদি কোনো ফাংশনের return টাইপ জানতে চাই**
+
+➡️ তখন `ReturnType<Function>` ব্যবহার করবো
+
+```tsx
+function getAge(): number {
+  return 25;
+}
+type Age = ReturnType<typeof getAge>; // number
+```
