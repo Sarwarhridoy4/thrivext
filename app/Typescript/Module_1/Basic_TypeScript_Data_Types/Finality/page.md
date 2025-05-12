@@ -16,4 +16,4 @@
 | `intersection` | একাধিক টাইপ একত্রে                | `FrontendDev & BackendDev`                  |
 | `type alias`   | পুনরাবৃত্ত টাইপ সংজ্ঞায়ন          | `type User = { name: string; age: number }` |
 
-![Finality](../../../../../public/TypeScript/Finality.png)
+![Finality](../../../../../public/images/TypeScript/Finality.png)
