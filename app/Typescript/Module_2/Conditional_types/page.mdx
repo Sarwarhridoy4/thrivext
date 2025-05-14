@@ -1,0 +1,50 @@
+# **Conditional types**
+
+TypeScript-এ **conditional type** হলো এমন এক সিস্টেম যেটা শর্ত অনুযায়ী টাইপ রিটার্ন করে।
+
+একটা `if...else` এর মতো কাজ করে, তবে টাইপ লেভেলে।
+
+## উদাহরণ ১: `keyof` এর সাথে Conditional Type
+
+```tsx
+type myVehicles = {
+  car: string;
+  bike: string;
+};
+
+// এই টাইপ চেক করবে: যেটা পাঠাচ্ছি সেটা কি myVehicles এর key এর মধ্যে আছে?
+type checkVehicle<T> = T extends keyof myVehicles ? true : false;
+
+type hasCar = checkVehicle<'car'>;   // true ✅
+type hasShip = checkVehicle<'ship'>; // false ❌
+```
+
+**🔍 ব্যাখ্যা:**
+
+- `checkVehicle<'car'>` → `car` আছে `myVehicles` এর ভিতরে → রিটার্ন `true`
+- `checkVehicle<'ship'>` → নেই → রিটার্ন `false`
+
+---
+
+## উদাহরণ ২: দুইটা টাইপ compare করে check করা
+
+```tsx
+type Admin = {
+  name: string;
+  role: string;
+};
+
+type User = {
+  name: string;
+};
+
+type IsAdmin<T> = T extends Admin ? "Admin" : "User";
+
+type Result1 = IsAdmin<Admin>; // "Admin"
+type Result2 = IsAdmin<User>;  // "User"
+```
+
+**🔍 ব্যাখ্যা:**
+
+- `Result1` এ আমরা `Admin` পাঠাইছি → যেহেতু `Admin extends Admin` → রিটার্ন "Admin"
+- `Result2` এ `User` পাঠাইছি → `User` এ `role` নেই → match হয়নি → রিটার্ন "User"
