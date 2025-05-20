@@ -45,6 +45,86 @@ const fetchUser = async (): Promise<User> => {
 
 এখানে আমরা বলেছি — এই function `Promise<User>` return করবে। এরপর সেই user object নিয়ে কাজ করতে পারি।
 
+## ✅ Promise নিয়ে Step-by-step উদাহরণ
+
+#### 1. সাধারণ Promise সিমুলেশন ও async/await কল
+
+একটা সাধারণ Promise ফাংশন, ডিফল্ট টাইপ unknown হিসেবে ধরে নেয়া হয়
+
+```tsx
+const simplePromise = (): Promise<unknown> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Hello from Promise!");
+    }, 1000);
+  });
+};
+
+async function callSimplePromise() {
+  const result = await simplePromise(); // result এর টাইপ unknown
+  console.log(result); // output: Hello from Promise!
+}
+
+callSimplePromise();
+```
+
+---
+
+### 2. Promise এ explicit string টাইপ অ্যাসাইন করা
+
+```tsx
+const stringPromise = (): Promise<string> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Hello, typed Promise!");
+    }, 1000);
+  });
+};
+
+async function callStringPromise() {
+  const result: string = await stringPromise();
+  console.log(result); // output: Hello, typed Promise!
+}
+
+callStringPromise()
+```
+
+---
+
+### 3. অবজেক্ট টাইপ সহ Promise এর উদাহরণ
+
+```tsx
+// অবজেক্টের টাইপ ডেফিনিশন
+type DataType = {
+  message: string; 
+};
+
+// ✅ Promise ফাংশন যা DataType টাইপ রিটার্ন করে
+const createPromise = (): Promise<DataType> => {
+  return new Promise((resolve, reject) => {
+    const data: DataType = { message: "This is some data" };
+
+    if (data) {
+      resolve(data); // ডেটা ঠিকঠাক থাকলে resolve
+    } else {
+      reject("Failed to load data"); // ডেটা না থাকলে reject
+    }
+  });
+};
+
+// ✅ async ফাংশন যা createPromise থেকে ডেটা এনে রিটার্ন করে
+const showData = async (): Promise<DataType> => {
+  const data: DataType = await createPromise();
+  return data;
+};
+
+// ✅ ফাংশন কল ও রেজাল্ট প্রদর্শন
+showData().then((res) => console.log(res));
+// output: { message: "This is some data" }
+
+```
+
+
 ## 📝 Summary
 
 - `async` function সবসময় `Promise` রিটার্ন করে।
