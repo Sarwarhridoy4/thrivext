@@ -1,0 +1,182 @@
+## **Interface কী?**
+
+TypeScript-এ `interface` হলো এমন এক কাঠামো, যেটা দিয়ে আমরা object-এর গঠন (structure) নির্ধারণ করি। 
+
+যেমন, কোন কোন property থাকবে, সেগুলোর টাইপ কী হবে — এসব কিছু আমরা `interface` দিয়ে declare করতে পারি।
+
+`interface` অনেকটাই `type alias`-এর মতো, কিন্তু শুধুমাত্র **reference types** (যেমন object, array)-এর জন্য ব্যবহৃত হয়। Primitive values-এর জন্য আমরা `interface` ব্যবহার করতে পারি না।
+
+### **উদাহরণ (Type Alias দিয়ে):**
+
+```tsx
+type User = {
+  name: string;
+  age: number;
+};
+
+const user: User = {
+  name: 'Type Allias',
+  age: 1
+};
+```
+
+### **একই কাজ Interface দিয়ে:**
+
+```tsx
+interface User2 {
+  name: string;
+  age: number;
+}
+
+const user: User2 = {
+  name: 'Interface',
+  age: 1
+};
+```
+
+---
+
+## **Interface Extends**
+
+`type alias`-এ আমরা `intersection (&)` ব্যবহার করে নতুন প্রপার্টি যোগ করতে পারি:
+
+```tsx
+type User = { name: string; age: number };
+
+type FullUser = User & { phone: number };
+
+const user2: FullUser = {
+  name: 'Type Allias',
+  age: 1,
+  phone: 1234567890
+};
+```
+
+Interface-এ এই কাজটি করা যায় `extends` keyword ব্যবহার করে:
+
+```tsx
+interface User2 { name: string; age: number; }
+
+interface FullUser2 extends User2 {
+  phone: number;
+}
+
+const user: FullUser2 = {
+  name: 'Interface',
+  age: 1,
+  phone: 1234567890
+};
+```
+
+### **Type Alias কে Interface দিয়ে Extend করা:**
+
+```tsx
+type User = { name: string; age: number; }
+
+interface FullUser2 extends User {
+  phone: number;
+}
+
+const user: FullUser2 = {
+  name: 'Interface',
+  age: 1,
+  phone: 1234567890
+};
+```
+
+---
+
+## **Interface শুধু object-এ সীমাবদ্ধ নয়**
+
+`interface` মূলত object structure বোঝাতে ব্যবহৃত হলেও, আমরা `array`, `function`, এমনকি `class` এর টাইপও define করতে পারি। কারণ JavaScript-এ অ্যারে, ফাংশন এবং ক্লাস — এদের প্রতিটিই মূলত অবজেক্ট।
+
+---
+
+## **Array টাইপ Define করা**
+
+সাধারণভাবে Array:
+
+```tsx
+const tstypes = ['Type allias', 'interface'];
+```
+
+Type Alias দিয়ে:
+
+```tsx
+type TStypes = string[];
+
+const tstypes: TStypes = ['Type allias', 'interface'];
+```
+
+Interface দিয়ে করতে হলে, index ও value এর টাইপ দিতে হয়:
+
+```tsx
+interface TStypes2 {
+  [index: number]: string;
+}
+
+const tstypes: TStypes2 = ['Type allias', 'interface'];
+```
+
+---
+
+## **Function টাইপ Define করা**
+
+### **Type Alias দিয়ে:**
+
+```tsx
+type Add = (num1: number, num2: number) => number;
+
+const add: Add = (num1, num2) => {
+  return num1 + num2;
+};
+```
+
+### **Interface দিয়ে:**
+
+```tsx
+interface Add {
+  (num1: number, num2: number): number;
+}
+
+const add: Add = (num1, num2) => {
+  return num1 + num2;
+};
+```
+
+---
+
+## **Type 🆚 Interface**
+
+TypeScript-এ `type` এবং `interface` অনেক কিছুতেই একে অপরের বিকল্প, তবে কিছু পার্থক্য আছে।
+
+## **✅ Table: পার্থক্যগুলো এক নজরে**
+
+| **বৈশিষ্ট্য** | **`interface` ✅** | **`type` ✅** |
+| --- | --- | --- |
+| Object structure define | ✅ | ✅ |
+| Function টাইপ define করা | ✅ | ✅ |
+| Array, Tuple টাইপ | ✅ (কিছুটা সীমিত) | ✅ |
+| Union & Intersection | ❌ | ✅ |
+| Extend করা (inherit) | ✅ (`extends` দিয়ে) | ✅ (`&` দিয়ে) |
+| Duplicate declare করে merge | ✅ | ❌ |
+| Primitive define করা | ❌ | ✅ (e.g. `type Age = number`) |
+| Class implement করা | ✅ | ✅ |
+
+## 🧭 **তাহলে কখন `type alias` আর কখন `interface` ব্যবহার করব?**
+
+- **Function** ও **Array** এর টাইপ declare করার সময় `type alias` ব্যবহার করা বেশি clean ও readable।
+- **Object structure** এর জন্য তুমি `interface` অথবা `type` — যেকোনোটা ব্যবহার করতে পারো, এটা একান্তই তোমার পছন্দের ওপর নির্ভর করে।
+- কারণ JavaScript-এ **array**, **function** এবং **class** — সবই মূলত **object**, তাই এদের টাইপ define করার সময় `interface` ও `type` দুটিই ব্যবহার করা যায়।
+
+---
+
+### 📋 **সংক্ষেপে তুলনামূলক তালিকা:**
+
+| **যদি আমরা চাই…** | **তাহলে ব্যবহার করব** |
+| --- | --- |
+| Object structure define করতে | `interface` বা `type` যেকোনোটা |
+| Multiple টাইপ combine করতে | `type` (`&` বা union দিয়ে) |
+| ভবিষ্যতে extend বা modify করার সম্ভাবনা থাকলে | `interface` |
+| Class implement করতে | `interface` |
+| Primitive, union, intersection টাইপ define করতে | `type` |

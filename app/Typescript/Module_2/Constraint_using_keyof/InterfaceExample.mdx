@@ -1,0 +1,29 @@
+
+
+```tsx
+interface Role {
+  frontend: string;
+  backend: string;
+  fullstack: string;
+}
+
+interface Employee {
+  name: string;
+  age: number;
+  email: string;
+  role: keyof Role;
+}
+```
+
+✅ সঠিক উদাহরণ:
+
+```tsx
+
+const employee1: Employee = {
+  name: 'Hamim',
+  age: 18,
+  email: 'hamim@gmail.com',
+  role: "fullstack" // ঠিক আছে, কারণ এটি Role এর key
+};
+```
+
