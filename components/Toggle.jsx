@@ -10,14 +10,14 @@ export default function Toggle({ title, children }) {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 text-left font-medium transition-colors  w-full"
+        className="flex items-center gap-2 text-left font-medium transition-colors  w-full  " 
       >
         <BiSolidDownArrow
           className={`${
             open ? "" : " -rotate-90"
-          }  transition-all duration-300 ease-out cursor-pointer`}
+          }  transition-all duration-300 ease-out cursor-pointer  `}
         />
-        <span title="Click to toggle" className=" cursor-pointer w-full">
+        <span title="Click to toggle" className=" cursor-pointer w-full  ">
           {title}
         </span>
       </button>

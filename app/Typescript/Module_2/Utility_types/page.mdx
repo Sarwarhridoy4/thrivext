@@ -1,6 +1,6 @@
 # **Utility types**
 
-## ✅ 1. **আমরা যদি একটা টাইপের সব property-কে optional বানাতে চাই**
+### 1. **আমরা যদি একটা টাইপের সব property-কে optional বানাতে চাই**
 
 ➡️ তখন `Partial<Type>` ব্যবহার করবো
 
@@ -13,7 +13,7 @@ const user: OptionalUser = { name: "Hamim" }; // ঠিক আছে, age না
 
 ---
 
-## ✅ 2. **আমরা যদি একটা টাইপের সব optional property-কে required করতে চাই**
+### 2. **আমরা যদি একটা টাইপের সব optional property-কে required করতে চাই**
 
 ➡️ তখন `Required<Type>` ব্যবহার করবো
 
@@ -26,7 +26,7 @@ const user: FullUser = { name: "Hamim", age: 18 }; // সব দিতে হব
 
 ---
 
-## ✅ 3. **আমরা যদি একটা টাইপের সব প্রপার্টিকে read-only করতে চাই**
+### 3. **আমরা যদি একটা টাইপের সব প্রপার্টিকে read-only করতে চাই**
 
 ➡️ তখন `Readonly<Type>` ব্যবহার করবো
 
@@ -40,7 +40,7 @@ const user: ReadonlyUser = { name: "Hamim", age: 20 };
 
 ---
 
-## ✅ 4. **আমরা যদি নির্দিষ্ট কিছু key এবং তাদের value টাইপ দিয়ে object টাইপ বানাতে চাই**
+### 4. **আমরা যদি নির্দিষ্ট কিছু key এবং তাদের value টাইপ দিয়ে object টাইপ বানাতে চাই**
 
 ➡️ তখন `Record<Keys, ValueType>` ব্যবহার করবো
 
@@ -56,7 +56,7 @@ const access: AccessMap = {
 
 ---
 
-## ✅ 5. **আমরা যদি কোন টাইপ থেকে নির্দিষ্ট কয়েকটা key বেছে নিতে চাই**
+### 5. **আমরা যদি কোন টাইপ থেকে নির্দিষ্ট কয়েকটা key বেছে নিতে চাই**
 
 ➡️ তখন `Pick<Type, Keys>` ব্যবহার করবো
 
@@ -69,7 +69,7 @@ const user: BasicInfo = { name: "Hamim", email: "hamim@gmail.com" };
 
 ---
 
-## ✅ 6. **আমরা যদি কোন টাইপ থেকে কিছু key বাদ দিতে চাই**
+### 6. **আমরা যদি কোন টাইপ থেকে কিছু key বাদ দিতে চাই**
 
 ➡️ তখন `Omit<Type, Keys>` ব্যবহার করবো
 
@@ -82,7 +82,7 @@ const user: NoEmail = { name: "Hamim", age: 20 };
 
 ---
 
-## ✅ 7. **আমরা যদি Union টাইপ থেকে কিছু নির্দিষ্ট টাইপ বাদ দিতে চাই**
+### 7. **আমরা যদি Union টাইপ থেকে কিছু নির্দিষ্ট টাইপ বাদ দিতে চাই**
 
 ➡️ তখন `Exclude<Type, Remove>` ব্যবহার করবো
 
@@ -93,7 +93,7 @@ type NoError = Exclude<Status, "error">; // "loading" | "success"
 
 ---
 
-## ✅ 8. **আমরা যদি শুধু মিল থাকা টাইপ গুলো রাখতে চাই**
+### 8. **আমরা যদি শুধু মিল থাকা টাইপ গুলো রাখতে চাই**
 
 ➡️ তখন `Extract<Type, Match>` ব্যবহার করবো
 
@@ -105,7 +105,7 @@ type Common = Extract<A, B>; // "b" | "c"
 
 ---
 
-## ✅ 9. **আমরা যদি null এবং undefined বাদ দিতে চাই টাইপ থেকে**
+### 9. **আমরা যদি null এবং undefined বাদ দিতে চাই টাইপ থেকে**
 
 ➡️ তখন `NonNullable<Type>` ব্যবহার করবো
 
@@ -116,7 +116,7 @@ type CleanValue = NonNullable<Value>; // string
 
 ---
 
-## ✅ 10. **আমরা যদি কোনো ফাংশনের parameter গুলোর টাইপ জানতে চাই**
+### 10. **আমরা যদি কোনো ফাংশনের parameter গুলোর টাইপ জানতে চাই**
 
 ➡️ তখন `Parameters<Function>` ব্যবহার করবো
 
@@ -127,7 +127,7 @@ type Params = Parameters<typeof greet>; // [string, number]
 
 ---
 
-## ✅ 11. **আমরা যদি কোনো ফাংশনের return টাইপ জানতে চাই**
+### 11. **আমরা যদি কোনো ফাংশনের return টাইপ জানতে চাই**
 
 ➡️ তখন `ReturnType<Function>` ব্যবহার করবো
 

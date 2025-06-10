@@ -9,9 +9,9 @@ bro1.push(...bro2);
 - `...` স্প্রেড অপারেটর দিয়ে bro2-এর সব উপাদান bro1-এ যুক্ত করা হলো।
 
 ```tsx
-const bro3 = { name: "Rafsan", age: 30 };
-const bro4 = { name: "Rafiq", age: 25 };
-const bro5 = { ...bro3, ...bro4 };
+const bro3: { name: string; age: number } = { name: "Rafsan", age: 30 };
+const bro4: { name: string; age: number } = { name: "Rafiq", age: 25 };
+const bro5: { name: string; age: number } = { ...bro3, ...bro4 };
 ```
 
 - দুটি অবজেক্ট মার্জ করা হলো। একই প্রপার্টি থাকলে শেষেরটি থাকবে।
