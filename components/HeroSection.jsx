@@ -100,7 +100,7 @@ export default function HeroSection() {
         </span>
         <div className="flex gap-4  mt-4 md:mt-5   lg:mt-6 w-full justify-center items-center  font-semibold sm:font-bold">
           <Link
-            href="/0_gettingstarted"
+            href="/gettingstarted"
             type="button"
             className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br  rounded-lg sm:rounded-xl   px-4 md:px-5    lg:px-6    py-3 md:py-3.5  lg:py-4  text-center cursor-pointer  text-xs sm:text-sm md:text-base lg:text-lg"
           >
