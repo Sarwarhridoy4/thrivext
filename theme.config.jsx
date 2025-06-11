@@ -26,6 +26,21 @@ export default {
       <span className="font-bold text-xl">Thrivext</span>
     </Link>
   ),
+   navbar: [
+    {
+      title: "Home",
+      href: "/", // homepage route
+    },
+    {
+      title: "Docs",
+      menu: [
+        {
+          title: "Next Level Web Development",
+          href: "/docs/0_gettingstarted", // ডকুমেন্টেশন পাথ
+        },
+      ],
+    },
+  ],
   project: {
     link: "https://github.com/Takib-Ahmed/thrivext",
   },
