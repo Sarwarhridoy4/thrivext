@@ -20,5 +20,6 @@ export default {
   Basics_of_backend: "Basics of Backend",
   React: "React",
   Typescript: "TypeScript",
+  DBMS:'DBMS',
   Express_and_Mongoose: "Express and Mongoose"
 };
