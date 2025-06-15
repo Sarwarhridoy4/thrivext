@@ -17,9 +17,11 @@ export default async function RootLayout({ children }) {
       <Head>
         <link
           rel="icon"
-          href="/thrivext/cropped-bEvKgIiUSIy-93xr4nDckg.webp"
+          href="/ChatGPT Image Jun 15, 2025, 04_14_04 PM (1).png"
           type="image/webp"
         />
+
+        
       </Head>
       <body suppressHydrationWarning>
         <Layout
