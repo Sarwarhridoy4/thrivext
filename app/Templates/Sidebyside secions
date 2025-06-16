@@ -6,9 +6,11 @@
 
 //img1 or text 
 
+<div className=' lg:hidden'>
+--- </div>
 
 </div>
---- 
+
 
 <div className=' w-full'>
 
