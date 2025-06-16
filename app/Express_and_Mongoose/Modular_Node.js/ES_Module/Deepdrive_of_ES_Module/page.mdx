@@ -1,0 +1,107 @@
+# ES Modules in Node.js
+## ES Modules in Node.js: A Deep Dive 🔬
+
+এই ডকুমেন্টে আমরা CommonJS ব্যাবস্থা ES Modules (বা ECMAScript Modules) সম্পর্কে কথা থাকু বুঝব দেব চেষ্টা করবো, যাতি Node.js এর মোডুলার সিস্টেমে ইদুই সাপোর্ণ এলাভেল কোড ও ইমপলেমেন্ট প্রযোগগুলো দেখাবো।
+
+---
+
+## 🤖 শুরুটা কোথা থেকে?
+
+Node.js এর শুরুতে বিল্ট-ইন কোনো মোডুলার সিস্টেম ছিল না। তার মানে JavaScript থাকু Web পৃষ্ঠিতে ইউজ হোতো:
+
+> "With great responsibility comes great power."
+
+যখন JavaScript দিয়ে backend server application তৈরি শুরু হলো (Node.js এর মাধ্যমে), তখন দরকার হলো কোডগুলোকে ভাগ করার, অর্থাৎ একটা Modular System।
+
+---
+
+## 🌐 CommonJS: Node.js র প্রথম মোডুল প্লারপ্তি
+
+CommonJS হলো Node.js এর প্রথম module system যেটা দিয়ে:
+
+```js
+// file1.js
+function add(a, b) {
+  return a + b;
+}
+
+module.exports = add;
+
+// file2.js
+const add = require('./file1');
+console.log(add(2, 3));
+```
+
+---
+
+## 🪤 ECMAScript Modules (ESM): একটা আধুনিক পথ
+
+Node.js v14 থেকে এসেম মডুল অফিশিয়ালি ভাবে করে নিয়েছে।
+
+**সিনট্যাক্স তুলনা:**
+
+```js
+// ES Modules
+// file1.mjs
+export function add(a, b) {
+  return a + b;
+}
+
+// file2.mjs
+import { add } from './file1.mjs';
+console.log(add(5, 6));
+```
+
+> ⚠ Note: ES Modules এর খেতে `.mjs` ব্যাপার `.js` ফাইলের এক্সেটে `"type": "module"` করে package.json এ প্রয়োজন করতে হবে।
+
+---
+
+## 🔄 Named Export & Import
+
+```js
+// file1.mjs
+export const A = 5;
+export const B = 10;
+export function add(x, y) {
+  return x + y;
+}
+
+// file2.mjs
+import { A as A3, B as B3, add as addFunc } from './file1.mjs';
+
+console.log(A3); // 5
+console.log(B3); // 10
+console.log(addFunc(3, 6));
+```
+
+> 🏛 Named import/export এর মাধ্যমে নাম match করা এবং চাইলে alias ব্যাবহার করা যায়।
+
+---
+
+## 🔒 Default Export
+
+```js
+// file1.mjs
+function subtract(a, b) {
+  return a - b;
+}
+
+export default subtract;
+
+// file2.mjs
+import subtract from './file1.mjs';
+console.log(subtract(10, 4));
+```
+
+> 🔍 Default export একটা module থেকে বেশি একটি export দিয়ে প্রযোগ করা যায়।
+
+---
+
+## 🚀 উপসংহার
+
+* CommonJS: require/module.exports
+* ES Modules: import/export (named & default)
+* `.mjs` extension বা `type: module` ব্যবহারে ES Modules support
+* Cleaner syntax, better tooling, async module loading supported
+
+> এখন থেকে তুমি Node.js এ আধুনিক JavaScript ES Module ব্যাবহার করে কোডকে আরও maintainable ও readable করে তুলতে পারো! 🚀

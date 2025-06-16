@@ -1,4 +1,11 @@
 # 🔁 Single Threaded Execution (Node.js এ কীভাবে কাজ করে):
+---
+<div className=' flex flex-col lg:flex-row justify-center gap-5 lg:gap-0 '>
+
+<div className='  flex'>
+
+
+
 
 1. প্রথমে কোড initialize হয়।
 2. Top-level কোড (main function-এর বাইরের কোড) execute হয়।
@@ -6,20 +13,63 @@
 4. Callback বা Event গুলো **register** করা হয়, কিন্তু তখনই execute হয় না।
 5. এরপর **Event Loop** শুরু হয়, যা registered callback গুলো পর্যায়ক্রমে execute করে।
 
+<div className=' lg:hidden'>
+--- 
+
+</div>
+
+</div>
+
+
+<div className=' w-full lg:w-[55%]'>
+
+
 ![screencapture-web-programming-hero-level2-batch-5-video-level2-batch-5-12-4-high-level-overview-of-node-js-architecture-2025-06-14-12_22_42.png](../images/screencapture-web-programming-hero-level2-batch-5-video-level2-batch-5-12-4-high-level-overview-of-node-js-architecture-2025-06-14-12_22_42.png)
 
----
 
+
+</div>
+</div>
+---
 ### ⚙️ কিন্তু যদি কোন Callback ভারী কাজ হয়?
+
+<div className=' flex flex-col lg:flex-row justify-between gap-5 lg:gap-0  lg:mt-5'>
+
+<div className=' w-full'>
+
+
+
 
 - যেমন: File read, Crypto calculation, Image processing...
 - তখন Node.js সেই ভারী কাজগুলোকে **Thread Pool** এ পাঠিয়ে দেয়।
 - এই Thread Pool হলো একগুচ্ছ Worker Thread যেগুলো ওই ভারী Task গুলো handle করে।
 - কাজ শেষ হলে তারা Event Loop কে জানায়, তারপর Event Loop Output দেখায়।
 
+
+
+<div className=' lg:hidden'>
+--- 
+
+</div>
+
+</div>
+
+
+<div className=' w-full lg:w-[80%]'>
+
+
 ![screencapture-web-programming-hero-level2-batch-5-video-level2-batch-5-12-4-high-level-overview-of-node-js-architecture-2025-06-14-12_20_46 (1).png](../images/screencapture-web-programming-hero-level2-batch-5-video-level2-batch-5-12-4-high-level-overview-of-node-js-architecture-2025-06-14-12_20_46_(1).png)
 
+
+
+</div>
+</div>
 ---
+
+
+
+
+
 
 ### 🎯 সারাংশ:
 
@@ -29,6 +79,8 @@
 - সব কিছুর সমন্বয় করে **Event Loop** → তাই একে বলে **Event Driven Architecture**
 - Node.js একক Thread-এ চলে → Single-threaded।
 - কিন্তু Node.js **libuv** এর মাধ্যমে **Thread Pool** ব্যবহার করে।
+
+---
 
 ### 🔧 Internal Thread Pool:
 
@@ -44,7 +96,16 @@ fs.readFile('data.txt', (err, data) => {
 
 👉 File read হলে libuv Thread Pool-এ চলে যায়, আর callback পরে Event Loop এ ফিরে আসে।
 
+
+---
+
 ### 🚨 Single Threaded Architecture এর Downside
+
+
+<div className=' flex flex-col lg:flex-row justify-between gap-5 lg:gap-0 items-center lg:mt-5'>
+
+<div className=' w-full'>
+
 
 ধরো, আমাদের একটি Node.js সার্ভার আছে — যেটি single-threaded।
 
@@ -55,11 +116,39 @@ fs.readFile('data.txt', (err, data) => {
 3. 🧑‍💻 **User 3**: Database query করছে
 4. 🧑‍💻 **User 4**: আরও একটি ডেটা রিকোয়েস্ট করছে
 
+<div className=' lg:hidden'>
+--- 
+
+
+</div>
+
+</div>
+
+
+<div className=' w-full'>
+
+
+
+
+
+
 ![screencapture-web-programming-hero-level2-batch-5-video-level2-batch-5-12-4-high-level-overview-of-node-js-architecture-2025-06-14-12_49_29.png](../images/screencapture-web-programming-hero-level2-batch-5-video-level2-batch-5-12-4-high-level-overview-of-node-js-architecture-2025-06-14-12_49_29.png)
 
+
+
+</div>
+</div>
 ---
 
+
+
 ### ⚙️ এখন কী ঘটবে?
+
+
+<div className=' flex flex-col lg:flex-row justify-between gap-5 lg:gap-0  lg:mt-5'>
+
+<div className=' w-full'>
+
 
 - **User 1** এর রিকোয়েস্ট খুব সহজ, সেক্ষেত্রে Node.js একে সহজেই serve করে দিবে।
 
@@ -76,11 +165,33 @@ fs.readFile('data.txt', (err, data) => {
 
 এটাই হচ্ছে **Single Threaded Architecture**-এর বড় একটা **disadvantage**।
 
+<div className=' lg:hidden'>
+--- 
+</div>
+
+</div>
+
+
+<div className=' w-full'>
+
+
 ![screencapture-web-programming-hero-level2-batch-5-video-level2-batch-5-12-4-high-level-overview-of-node-js-architecture-2025-06-14-12_55_20 (2).png](../images/screencapture-web-programming-hero-level2-batch-5-video-level2-batch-5-12-4-high-level-overview-of-node-js-architecture-2025-06-14-12_55_20_(2).png)
+
+
+
+</div>
+</div>
+
+
 
 ---
 
 ### 🛠️ সমাধান কী?
+
+<div className=' flex flex-col lg:flex-row justify-between gap-5 lg:gap-0  lg:mt-5'>
+
+<div className=' w-full'>
+
 
 এই সমস্যার সমাধান দেয় **Thread Pool + Asynchronous Programming**।
 
@@ -92,7 +203,24 @@ fs.readFile('data.txt', (err, data) => {
 4. কাজ শেষ হলে Thread Pool Event Loop কে জানাতো।
 5. তারপর Event Loop **User 2**কে তার ফাইল রেসপন্স পাঠিয়ে দিতো।
 
+
+<div className=' lg:hidden'>
+--- 
+</div>
+
+</div>
+
+
+<div className=' w-full lg:ms-2'>
+
+
 ![screencapture-web-programming-hero-level2-batch-5-video-level2-batch-5-12-4-high-level-overview-of-node-js-architecture-2025-06-14-13_16_59 (1).png](../images/screencapture-web-programming-hero-level2-batch-5-video-level2-batch-5-12-4-high-level-overview-of-node-js-architecture-2025-06-14-13_16_59_(1).png)
+
+
+
+</div>
+</div>
+
 
 ---
 
@@ -100,7 +228,7 @@ fs.readFile('data.txt', (err, data) => {
 
 👉 Node.js একটাই থ্রেড ব্যবহার করেও —
 
-**Asynchronous 방식ের মাধ্যমে ভারী Task গুলোকে smartly handle করে।**
+**Asynchronous র মাধ্যমে ভারী Task গুলোকে smartly handle করে।**
 
 - কেউ **Synchronous** request পাঠালে পুরো সার্ভার আটকে যেতে পারে। কিন্তু **Asynchronous** হলে, কাজ গুলো back-end এ ভাগ করে দেওয়া হয়।
 - এতে করে কেউ ব্লক হয় না, এবং সার্ভার পারফরম্যান্সও কমে না।
